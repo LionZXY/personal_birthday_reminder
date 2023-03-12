@@ -28,7 +28,7 @@ async def congratulations(number):
                     + "*, а это значит что у кого\-то 👀 сегодня день рождения\!🎉\n" \
                       "Поздравляем, " + birthday.name
     if birthday.nickname is not None:
-        birthday_text += ' (' + birthday.nickname + ')'
+        birthday_text += " \(" + birthday.nickname.replace('_', '\_') + "\)"
 
     birthday_text += "\!"
 

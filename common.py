@@ -20,7 +20,7 @@ def parse_birthdays():
         Birthday(
             time=dateparser.parse(row[0]),
             name=row[1].strip(),
-            nickname=row[2] if len(row) > 2 else None
+            nickname=row[2].strip() if len(row) > 2 else None
         )
         for row in birthday_rows
     ]
