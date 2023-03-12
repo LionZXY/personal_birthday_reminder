@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -12,7 +13,8 @@ class Birthday:
 
 
 def parse_birthdays():
-    birthday_raw = Path('birthday.csv').read_text().split('\n')
+    rootdir = os.path.abspath(os.path.dirname(__file__))
+    birthday_raw = Path(rootdir + '/birthday.csv').read_text().split('\n')
     birthday_rows = [row.split(',') for row in birthday_raw if len(row) >= 2]
     return [
         Birthday(
@@ -22,6 +24,3 @@ def parse_birthdays():
         )
         for row in birthday_rows
     ]
-
-
-print(parse_birthdays())

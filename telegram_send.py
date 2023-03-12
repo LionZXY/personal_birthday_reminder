@@ -42,4 +42,4 @@ async def congratulations(number):
 
 
 if __name__ == "__main__":
-    asyncio.run(congratulations(sys.argv[1:]))
+    asyncio.run(congratulations(sys.argv[1]))

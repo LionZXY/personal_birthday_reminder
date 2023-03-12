@@ -24,4 +24,4 @@ RUN python /app/cron_builder.py  >> /var/spool/cron/crontabs/root
 COPY secret.py /app/
 COPY telegram_send.py /app/
 
-CMD crond -f -l 2 -L /dev/stdout
+CMD crond -f -l 2

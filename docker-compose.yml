@@ -1,9 +1,11 @@
 services:
   bh_reminder_bot:
     build:
-      bot.Dockerfile
+      context: .
+      dockerfile: bot.Dockerfile
     restart: unless-stopped
   bh_reminder_cron:
     build:
-      cron.Dockerfile
+      context: .
+      dockerfile: cron.Dockerfile
     restart: unless-stopped
