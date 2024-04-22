@@ -3,9 +3,11 @@ services:
     build:
       context: .
       dockerfile: bot.Dockerfile
+      network: host
     restart: unless-stopped
   bh_reminder_cron:
     build:
       context: .
       dockerfile: cron.Dockerfile
+      network: host
     restart: unless-stopped
